@@ -7,7 +7,12 @@ function computerPlay() {
 
 // Player's selection
 function playerPlay() {
-
+  let personSelection = prompt("Please make your selection.").toLowerCase();
+  if (personSelection !== 'rock' || personSelection !== 'paper' || 
+  personSelection !== 'scissors') {
+    personSelection = prompt("Please choose one of three - rock, paper, or scissors")
+  }
+  return personSelection;
 }
 
 // One round of game
