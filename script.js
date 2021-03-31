@@ -46,7 +46,30 @@ function playRound(playerSelection, computerSelection) {
 
 // Play game
 function game() {
+  const rounds = 5;
+  let playerScore = 0;
+  let computerScore = 0 ;
 
+  for (let round = 1; round <= rounds; round++) { 
+    let playerSelection = playerPlay();
+    let computerSelection = computerPlay();
+    let score = playRound(playerSelection, computerSelection);
+    if (score[0] === 1 && score[1] === 0) {
+      playerScore++;
+    } else if (score[0] === 0 && score[1] === 1) {
+      computerScore++;
+    }    
+  }
+
+  console.log(`You vs. computer: ${playerScore} : ${computerScore}`);
+
+  if (playerScore > computerScore) {
+    console.log("Congratulations! You are the winner!")
+  } else if (computerScore > playerScore) {
+    console.log("Luck isn't on your side today :(")
+  } else {
+    console.log("It’s a tie!")
+  }
 }
 
 game();
