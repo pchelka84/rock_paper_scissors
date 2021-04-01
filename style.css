@@ -17,7 +17,6 @@ body {
 main {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   height: 100vh;
   padding: 0 20px;
@@ -25,9 +24,9 @@ main {
 }
 
 h1 {
-  text-align: center;
-  padding-bottom: 20px;
+  padding: 30px 0 10px 0;
   letter-spacing: 3px;
+  text-align: center;
 }
 
 .container {
@@ -53,13 +52,12 @@ h1 {
 
 .btn-start {
   cursor: pointer;
-  padding: 7px 23px;
-  /* background-color: var(--primary-color);*/
+  padding: 10px 23px;
+  font-family: "Amatic SC", cursive;
   background-color: salmon;
   color: #fff;
   border: 0;
   border-radius: 2px;
-  font-size: 14px;
   text-align: center;
 }
 
@@ -108,7 +106,7 @@ h1 {
 }
 
 h3 {
-  padding-bottom: 40px;
+  padding-bottom: 20px;
 }
 
 .player {
@@ -126,9 +124,9 @@ h3 {
 .computer-selections button {
   width: 75px;
   height: 75px;
+  font-size: 50px;
   border-radius: 3px;
   border: 1px solid #54a896;
-  font-size: 50px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
   background-color: var(--primary-color);
   color: #fff;
@@ -151,4 +149,71 @@ h3 {
 .computer-selections button:active {
   transform: translateY(-30px) scale(1.1);
   transition: all 0.2s ease-in-out;
+}
+
+@media (max-width: 900px) {
+  .container {
+    width: 700px;
+  }
+}
+
+@media (max-width: 750px) {
+  .container {
+    width: 500px;
+    padding: 20px 10px;
+  }
+
+  h1 {
+    padding-bottom: 10px;
+  }
+
+  .info-area {
+    margin-bottom: 5px;
+  }
+
+  .game-area {
+    flex-direction: column-reverse;
+    justify-content: space-between;
+  }
+
+  .player,
+  .computer {
+    width: 100%;
+  }
+
+  .player {
+    border-right: 0;
+  }
+
+  .player-selections button:active,
+  .computer-selections button:active {
+    transform: translateY(-15px) scale(1.1);
+  }
+}
+
+@media (max-width: 550px) {
+  h1 {
+    font-size: 18px;
+  }
+
+  .container {
+    width: 400px;
+    padding: 20px 5px;
+    font-size: 16px;
+  }
+
+  .controllers {
+    padding-bottom: 10px;
+  }
+
+  .btn-start {
+    padding: 5px 13px;
+  }
+}
+
+@media (max-width: 430px) {
+  .container {
+    width: 300px;
+    padding: 10px 5px;
+  }
 }
