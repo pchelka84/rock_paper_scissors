@@ -8,7 +8,7 @@ function computerPlay() {
 
 // Player's selection
 function playerPlay() {
-  let personSelection = prompt("Please make your selection.").toLowerCase();  
+  // let personSelection = prompt("Please make your selection.").toLowerCase();  
   return personSelection;
 }
 

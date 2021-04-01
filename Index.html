@@ -5,17 +5,18 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/cd0157bcd6.js" crossorigin="anonymous"></script>
   <title>ROCK PAPER SCISSORS</title>
 </head>
 <body>
   <main>
+    <h1>Rock Paper Scissors</h1>
     <div class="container">
-      <h1>Let's play Rock Paper Scissors!</h1>
 
       <div class="controllers">
-        <button class="play"></button>
-        <div class="score">Score <div class="span" id="score">0:0</div></div>
-        <div class="round">Round #<span class="round"></span></div>
+        <button class="btn-start">Start <i class="fas fa-play"></i></button>
+        <div class="score">Score <span id="score">0:0</span></div>
+        <div class="round">Round #<span class="round">0</span></div>
       </div>
 
       <div class="info-area">
@@ -26,18 +27,18 @@
         <div class="player">
           <h3>You</h3>
           <div class="player-selections">
-            <button class="btn btn-player-rock"><i class="fas fa-hand-rock fx-2"></i></button>
-            <button class="btn btn-player-paper"><i class="fas fa-hand-paper"></i></button>
-            <button class="btn btn-player-scissors"><i class="fas fa-hand-scissors"></i></button>
+            <button class="btn-player-rock"><i class="fas fa-hand-rock fx-2"></i></button>
+            <button class="btn-player-paper"><i class="fas fa-hand-paper"></i></button>
+            <button class="btn-player-scissors"><i class="fas fa-hand-scissors"></i></button>
           </div>
         </div>
 
-        <div class="player">
+        <div class="computer">
           <h3>Computer</h3>
           <div class="computer-selections">
-            <button class="btn btn-computer-rock"><i class="fas fa-hand-rock fx-2"></i></button>
-            <button class="btn btn-computer-paper"><i class="fas fa-hand-paper"></i></button>
-            <button class="btn btn-computer-scissors"><i class="fas fa-hand-scissors"></i></button>
+            <button class="btn-computer-rock"><i class="fas fa-hand-rock fx-2"></i></button>
+            <button class="btn-computer-paper"><i class="fas fa-hand-paper"></i></button>
+            <button class="btn-computer-scissors"><i class="fas fa-hand-scissors"></i></button>
           </div>
         </div>
       </div>
