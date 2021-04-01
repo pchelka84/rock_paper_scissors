@@ -103,6 +103,7 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 10px;
 }
 
 h3 {
@@ -120,8 +121,10 @@ h3 {
   justify-content: space-around;
 }
 
-.player-selections button,
-.computer-selections button {
+/* .player-selections button,
+.computer-selections button { */
+.player-selection,
+.computer-selection {
   width: 75px;
   height: 75px;
   font-size: 50px;
@@ -130,25 +133,24 @@ h3 {
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
   background-color: var(--primary-color);
   color: #fff;
+  text-align: center;
 }
 
-.player-selections button:focus,
-.computer-selections button:focus {
-  outline: 0;
-}
-
-.player-selections button:hover,
-.computer-selections button:hover {
+.player-selection:hover,
+.computer-selection:hover {
   color: #f4f4f4;
   background-color: salmon;
   border: rgb(103, 69, 65);
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
 }
 
-.player-selections button:active,
-.computer-selections button:active {
-  transform: translateY(-30px) scale(1.1);
-  transition: all 0.2s ease-in-out;
+.player-selection.active,
+.computer-selection.active {
+  transform: translateY(-15px) scale(1.1);
+  transition: all 0.3s ease-in-out;
+  background-color: salmon;
+  border: rgb(103, 69, 65);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
 }
 
 @media (max-width: 900px) {
@@ -181,13 +183,12 @@ h3 {
     width: 100%;
   }
 
-  .player {
-    border-right: 0;
+  .computer {
+    padding-bottom: 10px;
   }
 
-  .player-selections button:active,
-  .computer-selections button:active {
-    transform: translateY(-15px) scale(1.1);
+  .player {
+    border-right: 0;
   }
 }
 

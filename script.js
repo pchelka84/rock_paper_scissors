@@ -9,6 +9,12 @@ const computerSelections = document.querySelectorAll('.computer-selection');
 function computerPlay() {
   const selections = ["rock", "paper", "scissors"];
   const randomIndex = Math.floor(Math.random() * selections.length);
+  const randomSelection = selections[randomIndex]; 
+  computerSelections.forEach(selection => {
+    if (selection === randomSelection) {
+      selection.classList.add('active');
+    }
+  })
   return randomSelection = selections[randomIndex]; 
 }
 
