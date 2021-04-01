@@ -1,3 +1,13 @@
+const start = document.getElementsByClassName('btn-start');
+const score = document.getElementById('score');
+const round = document.getElementById('round');
+const message = document.getElementsByClassName('message-area');
+const playerRock = document.getElementsByClassName('btn-player-rock');
+const playerScissors = document.getElementsByClassName('btn-player-scissors');
+const playerPaper = document.getElementsByClassName('btn-player-paper'); 
+const computerock = document.getElementsByClassName('btn-player-rock');
+const computerScissors = document.getElementsByClassName('btn-player-scissors');
+const computerPaper = document.getElementsByClassName('btn-player-paper');
 
 // Computer plays
 function computerPlay() {
