@@ -2,8 +2,8 @@ const start = document.getElementsByClassName('btn-start');
 const score = document.getElementById('score');
 const round = document.getElementById('round');
 const message = document.getElementsByClassName('message-area');
-const playerselection = document.querySelectorAll('.player-selection');
-const computerSelection = document.querySelectorAll('.computer-selection');
+const playerselections = document.querySelectorAll('.player-selection');
+const computerSelections = document.querySelectorAll('.computer-selection');
 
 // Computer plays
 function computerPlay() {
@@ -15,6 +15,7 @@ function computerPlay() {
 // Player's selection
 function playerPlay() {
   // let personSelection = prompt("Please make your selection.").toLowerCase();  
+  message.innerHtml = `Please make your selection`;
   return personSelection;
 }
 
