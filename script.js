@@ -50,7 +50,7 @@ function playRound() {
  
   console.log(roundSelection) 
  
-  if (playerSelection === computerSelection && playerSelection !== undefined && computerSelection !== undefined) { 
+  if (playerSelection === computerSelection) { 
     message.innerHTML = `You - ${playerSelection}, computer - ${computerSelection}. It’s a tie. Let's play again!`;
   } else if (
       (playerSelection === 'rock' && computerSelection === 'scissors') || 
