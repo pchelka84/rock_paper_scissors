@@ -46,17 +46,10 @@ function playRound() {
   let roundPlayerScore = 0;
   let roundComputerScore = 0; 
 
-  
   message.innerHTML = `Make your choice`;
-
-  playerPlay();
-  console.log(roundSelection)
-
-  let playerSelection = roundSelection[0];
-  let computerSelection = roundSelection[1];
-
-  console.log(`playRound: ${playerSelection} vs.${computerSelection}`)
-
+ 
+  console.log(roundSelection) 
+ 
   if (playerSelection === computerSelection && playerSelection !== undefined && computerSelection !== undefined) { 
     message.innerHTML = `You - ${playerSelection}, computer - ${computerSelection}. It’s a tie. Let's play again!`;
   } else if (
@@ -108,7 +101,7 @@ function play() {
   let computerScore = 0 ; 
   
   round.innerHTML = `1`;
-  // playRound();  
+  playRound();  
    
   // let playerSelection = roundSelection[0];
   // let computerSelection = roundSelection[1];
