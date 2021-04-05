@@ -19,7 +19,7 @@ function toggleActive(selection) {
   selection.classList.add('active')
   setTimeout(() => {
     selection.classList.remove('active')
-  }, 1100)
+  },700)
 }
 
 // Computer's selection
@@ -56,7 +56,7 @@ function playRound() {
       (playerSelection === 'scissors' && computerSelection === 'paper') 
       ) { 
     message.innerHTML = `You - ${playerSelection}, Computer - ${computerSelection}. You get 1 point.`;
-    roundPlayerScore++; 
+    roundPlayerScore++;  
   } else if (
     (computerSelection === 'rock' && playerSelection === 'scissors') || 
     (computerSelection === 'paper' && playerSelection === 'rock') ||
@@ -72,33 +72,26 @@ function playRound() {
 
 // Play game
 function play() {
-  console.log("start the game");
+  console.log("play a round");
   const rounds = 5;  
   
-  round.innerHTML = `1`;
-  playRound();  
+  round.innerHTML = `1`; 
+  let roundScore = playRound(); 
+  console.log('round score ' + roundScore);
 
-    let score = playRound(); 
-    if (score[0] === 1 && score[1] === 0) { 
-      playerScore++; 
-    } else if (score[0] === 0 && score[1] === 1) {
+    if (roundScore[0] === 0 && roundScore[1] === 0) {
+      score.innerHTML = `${playerScore}:${computerScore}`;  
+    } else if (roundScore[0] === 1 && roundScore[1] === 0) { 
+      playerScore++;
+      score.innerHTML = `${playerScore}:${computerScore}`; 
+      console.log('player score ' + playerScore) 
+    } else if (roundScore[0] === 0 && roundScore[1] === 1) {
       computerScore++;
+      score.innerHTML = `${playerScore}:${computerScore}`; 
+      console.log('computer score ' + computerScore)
     }    
-    score.innerHTML = `${playerScore}:${computerScore}`;
+    roundScore.innerHTML = `${playerScore}:${computerScore}`;
 }
-
-  // console.log(`You vs. computer: ${playerScore} : ${computerScore}`);
-
-  // if (playerScore > computerScore) {
-  //   message.innerHTML = `Congratulations! You are the winner!`
-  // } else if (computerScore > playerScore) {
-  //   message.innerHTML = `Luck isn't on your side today :(`
-  // } else {
-  //   message.innerHTML = `It’s a tie!`
-  // }
-
-
+ 
 // game();
-
-// startBtn.addEventListener('click', game); 
-// playerSelections.addEventListener('click', playRound);
+ 
