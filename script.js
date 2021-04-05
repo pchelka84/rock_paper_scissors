@@ -51,20 +51,20 @@ function playRound() {
   let roundComputerScore = 0; 
  
   if (playerSelection === computerSelection) { 
-    message.innerHTML = `You - ${playerSelection}, computer - ${computerSelection}. It’s a tie. Let's play again!`;
+    message.innerHTML = `${playerSelection.toUpperCase()} vs ${computerSelection.toUpperCase()}. It’s a tie. Let's play again!`;
   } else if (
       (playerSelection === 'rock' && computerSelection === 'scissors') || 
       (playerSelection === 'paper' && computerSelection === 'rock') ||
       (playerSelection === 'scissors' && computerSelection === 'paper') 
       ) { 
-    message.innerHTML = `You - ${playerSelection}, Computer - ${computerSelection}. You get 1 point.`;
+    message.innerHTML = `${playerSelection.toUpperCase()} beats ${computerSelection.toUpperCase()}. You get 1 point.`;
     roundPlayerScore++;  
   } else if (
     (computerSelection === 'rock' && playerSelection === 'scissors') || 
     (computerSelection === 'paper' && playerSelection === 'rock') ||
     (computerSelection === 'scissors' && playerSelection === 'paper')
     ) { 
-    message.innerHTML = `You - ${playerSelection}, Computer - ${computerSelection}. Computer gets 1 point.`;
+    message.innerHTML = `${computerSelection.toUpperCase()} beats ${playerSelection.toUpperCase()}. Computer gets 1 point.`;
     roundComputerScore++;
     }
 
@@ -88,7 +88,7 @@ function play() {
   let roundScore = playRound();  
 
   // Check if 5 rounds played
-  if (currentRound <= 5) { 
+  if (currentRound < 5) { 
 
     // Check round scores, update DOM
     if (roundScore[0] === 0 && roundScore[1] === 0) {
