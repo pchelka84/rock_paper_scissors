@@ -10,8 +10,11 @@ let playerSelection,
     computerSelection;  
 let playerScore = 0;
 let computerScore = 0; 
+let currentRound = 0;
 
 score.innerHTML = `${playerScore}:${computerScore}`; 
+round.innerHTML = `${currentRound}`;
+
 message.innerHTML = `Let's play a game! Rock, Paper, or Scissors?`;
 
 // Toggle active class 
@@ -30,8 +33,7 @@ function computerPlay() {
       }) ;  
      return selections[randomIndex];  
 }
-
-let roundSelection = [];
+ 
 // Player's selection
 playerSelections.forEach((selection, ind) => { 
       selection.addEventListener('click', () => {   
@@ -72,25 +74,29 @@ function playRound() {
 
 // Play game
 function play() {
-  console.log("play a round");
-  const rounds = 5;  
-  
-  round.innerHTML = `1`; 
+  console.log("play a round");  
+  round.innerHTML = `${currentRound}`; 
+  score.innerHTML = `${playerScore}:${computerScore}`; 
+
   let roundScore = playRound(); 
   console.log('round score ' + roundScore);
 
-    if (roundScore[0] === 0 && roundScore[1] === 0) {
-      score.innerHTML = `${playerScore}:${computerScore}`;  
-    } else if (roundScore[0] === 1 && roundScore[1] === 0) { 
-      playerScore++;
-      score.innerHTML = `${playerScore}:${computerScore}`; 
-      console.log('player score ' + playerScore) 
-    } else if (roundScore[0] === 0 && roundScore[1] === 1) {
-      computerScore++;
-      score.innerHTML = `${playerScore}:${computerScore}`; 
-      console.log('computer score ' + computerScore)
-    }    
-    roundScore.innerHTML = `${playerScore}:${computerScore}`;
+  if (roundScore[0] === 0 && roundScore[1] === 0) {
+    score.innerHTML = `${playerScore}:${computerScore}`;  
+    currentRound++;
+    round.innerHTML =  `${currentRound}`
+  } else if (roundScore[0] === 1 && roundScore[1] === 0) { 
+    playerScore++;
+    score.innerHTML = `${playerScore}:${computerScore}`;  
+    currentRound++;
+    round.innerHTML =  `${currentRound}`
+  } else if (roundScore[0] === 0 && roundScore[1] === 1) {
+    computerScore++;
+    score.innerHTML = `${playerScore}:${computerScore}`; 
+    currentRound++;
+    round.innerHTML =  `${currentRound}`
+  }    
+  roundScore.innerHTML = `${playerScore}:${computerScore}`;
 }
  
 // game();
