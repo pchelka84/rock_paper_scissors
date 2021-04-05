@@ -161,7 +161,7 @@ h3 {
 
 /* Modal */
 .modal {
-  /* display: none; */
+  display: none;
   position: fixed;
   z-index: 1;
   padding-top: 270px;

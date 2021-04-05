@@ -7,6 +7,7 @@ const computerSelections = document.querySelectorAll('.computer-selection');
 const close = document.querySelector('.close');
 const playAgainBtn = document.querySelector('.play-again');
 const modal = document.querySelector('#modal');
+const winningMessage = document.getElementById('winning-message');
 
 const selections = ["rock", "paper", "scissors"];
 let playerSelection,
@@ -47,7 +48,6 @@ playerSelections.forEach((selection, ind) => {
       })   
 }) 
 
-
 // One round of game
 function playRound() { 
   let roundPlayerScore = 0;
@@ -81,17 +81,28 @@ function updateResults() {
   round.innerHTML =  `${currentRound}`
 }
 
- 
+// Play again 
+function playAgain() {
+  modal.style.display = 'none'; 
+  currentRound = 0;
+  playerScore = 0;
+  computerScore = 0;
+}
+
+// Open modal 
+function openModal() {
+  setTimeout(() => {
+    modal.style.display = 'block';
+  }, 30); 
+}
+
+
 // Play game
-function play() {
-  console.log("play a round");  
+function play() { 
   round.innerHTML = `${currentRound}`; 
   score.innerHTML = `${playerScore}:${computerScore}`; 
 
   let roundScore = playRound();  
-
-  // Check if 5 rounds played
-  if (currentRound < 5) { 
 
     // Check round scores, update DOM
     if (roundScore[0] === 0 && roundScore[1] === 0) {
@@ -106,13 +117,13 @@ function play() {
     roundScore.innerHTML = `${playerScore}:${computerScore}`;
   
   // Show winner notification
-  } else {
-  }
-}
-
-// Play again 
-function playAgain() {
-  modal.style.display = 'none';
+  if (playerScore === 5) {
+    winningMessage.innerHTML = `Congratulations! You won!`;
+    openModal();
+  } if (computerScore === 5) {
+    winningMessage.innerHTML = `Luck isn't on your side. Try again.`;
+    openModal();  
+  } 
 }
 
 close.addEventListener('click', playAgain);
