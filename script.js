@@ -71,32 +71,40 @@ function playRound() {
  return [roundPlayerScore, roundComputerScore];
 }
 
+// Update results board
+function updateResults() {
+  score.innerHTML = `${playerScore}:${computerScore}`;  
+  currentRound++;
+  round.innerHTML =  `${currentRound}`
+}
 
+ 
 // Play game
 function play() {
   console.log("play a round");  
   round.innerHTML = `${currentRound}`; 
   score.innerHTML = `${playerScore}:${computerScore}`; 
 
-  let roundScore = playRound(); 
-  console.log('round score ' + roundScore);
+  let roundScore = playRound();  
 
-  if (roundScore[0] === 0 && roundScore[1] === 0) {
-    score.innerHTML = `${playerScore}:${computerScore}`;  
-    currentRound++;
-    round.innerHTML =  `${currentRound}`
-  } else if (roundScore[0] === 1 && roundScore[1] === 0) { 
-    playerScore++;
-    score.innerHTML = `${playerScore}:${computerScore}`;  
-    currentRound++;
-    round.innerHTML =  `${currentRound}`
-  } else if (roundScore[0] === 0 && roundScore[1] === 1) {
-    computerScore++;
-    score.innerHTML = `${playerScore}:${computerScore}`; 
-    currentRound++;
-    round.innerHTML =  `${currentRound}`
-  }    
-  roundScore.innerHTML = `${playerScore}:${computerScore}`;
+  // Check if 5 rounds played
+  if (currentRound <= 5) { 
+
+    // Check round scores, update DOM
+    if (roundScore[0] === 0 && roundScore[1] === 0) {
+      updateResults();
+    } else if (roundScore[0] === 1 && roundScore[1] === 0) { 
+      playerScore++;
+      updateResults();
+    } else if (roundScore[0] === 0 && roundScore[1] === 1) {
+      computerScore++;
+      updateResults();
+    }    
+    roundScore.innerHTML = `${playerScore}:${computerScore}`;
+  
+  // Show winner notification
+  } else {
+  }
 }
  
 // game();
