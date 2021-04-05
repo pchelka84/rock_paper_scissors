@@ -4,6 +4,9 @@ const round = document.getElementById('round');
 const message = document.querySelector('.message-container');
 const playerSelections = document.querySelectorAll('.player-selection');
 const computerSelections = document.querySelectorAll('.computer-selection');
+const close = document.querySelector('.close');
+const playAgainBtn = document.querySelector('.play-again');
+const modal = document.querySelector('#modal');
 
 const selections = ["rock", "paper", "scissors"];
 let playerSelection,
@@ -106,6 +109,12 @@ function play() {
   } else {
   }
 }
- 
-// game();
+
+// Play again 
+function playAgain() {
+  modal.style.display = 'none';
+}
+
+close.addEventListener('click', playAgain);
+playAgainBtn.addEventListener('click', playAgain);
  
