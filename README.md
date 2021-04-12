@@ -12,7 +12,6 @@ The player who picks the stronger of the two objects is the winner of a round. I
 
 ## How to run
 
-Live version of the game can be found [here].
-(https://pchelka84.github.io/rock-paper-scissors/)
+Live version of the game can be found [here](https://pchelka84.github.io/rock_paper_scissors/).
 
 Also, you can clone or download the project and simply open index.html in a browser to play the game.
