@@ -121,8 +121,8 @@ h3 {
   border-right: 1px solid #d1d1d1;
 }
 
-.player-selections,
-.computer-selections {
+#player-selections,
+#computer-selections {
   width: 100%;
   display: flex;
   justify-content: space-around;
@@ -141,8 +141,10 @@ h3 {
   text-align: center;
 }
 
-.player-selection > i {
+.player-selection > i,
+.computer-selection > i {
   pointer-events: none;
+  vertical-align: middle;
 }
 
 .player-selection:hover {
