@@ -15,11 +15,10 @@ let playerSelection,
 let playerScore = 0;
 let computerScore = 0; 
 let currentRound = 0;
-
 score.innerHTML = `${playerScore}:${computerScore}`; 
 round.innerHTML = `${currentRound}`;
 
-message.innerHTML = `Let's play a game! Rock, Paper, or Scissors?`;
+message.innerHTML = `Let's play a game! Earn 5 points first to win.`;
 
 // Toggle active class 
 function toggleActive(selection) {
@@ -83,10 +82,14 @@ function updateResults() {
 
 // Play again 
 function playAgain() {
-  modal.style.display = 'none'; 
-  currentRound = 0;
+  modal.style.display = 'none';  
   playerScore = 0;
-  computerScore = 0;
+  computerScore = 0; 
+  currentRound = 0;
+  score.innerHTML = `${playerScore}:${computerScore}`; 
+  round.innerHTML = `${currentRound}`;
+
+message.innerHTML = `Let's play a game! Earn 5 points first to win.`;
 }
 
 // Open modal 
@@ -118,14 +121,16 @@ function play() {
   
   // Show winner notification
   if (playerScore === 5) {
-    winningMessage.innerHTML = `Congratulations! You won!`;
+    winningMessage.innerHTML = `Congratulations! You won! 😀`;
     openModal();
   } if (computerScore === 5) {
-    winningMessage.innerHTML = `Luck isn't on your side. Try again.`;
+    winningMessage.innerHTML = `Luck isn't on your side. 🙄 Let's try again!`;
     openModal();  
   } 
 }
 
 close.addEventListener('click', playAgain);
 playAgainBtn.addEventListener('click', playAgain);
+
+initialDisplay();
  
