@@ -55,7 +55,6 @@ h1 {
 .btn-start {
   cursor: pointer;
   padding: 10px 23px;
-  font-family: "Amatic SC", cursive;
   background-color: salmon;
   color: #fff;
   border: 0;
@@ -207,7 +206,6 @@ h4 {
 .play-again {
   cursor: pointer;
   padding: 10px 23px;
-  font-family: "Amatic SC", cursive;
   background-color: salmon;
   color: #fff;
   border: 0;
